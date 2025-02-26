@@ -1,0 +1,23 @@
+[project]
+name = "shopping-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Muhammad Zain Attiq", email = "zainatteeq@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "langchain-google-genai>=2.0.11",
+    "langchain>=0.3.19",
+    "langchain-openai>=0.3.7",
+    "langgraph>=0.2.74",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+agent = "shopping_agent.agent:run_main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
