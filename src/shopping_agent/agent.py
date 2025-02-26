@@ -28,6 +28,18 @@ mock_data = {
             "url": "http://example.com/laptop-b",
             "description": "A lightweight laptop with a stunning display and long battery life."
         },
+        {
+            "name": "Laptop C",
+            "price": "$1499",
+            "url": "http://example.com/laptop-c",
+            "description": "A high-performance gaming laptop with RTX 3060 and 1TB SSD."
+        },
+        {
+            "name": "Laptop D",
+            "price": "$799",
+            "url": "http://example.com/laptop-d",
+            "description": "A budget-friendly laptop with 8GB RAM and 256GB SSD, perfect for students."
+        },
     ],
     "phone": [
         {
@@ -41,6 +53,60 @@ mock_data = {
             "price": "$899",
             "url": "http://example.com/phone-b",
             "description": "A premium smartphone with a sleek design and advanced features."
+        },
+        {
+            "name": "Phone C",
+            "price": "$499",
+            "url": "http://example.com/phone-c",
+            "description": "A budget-friendly phone with long battery life and a sharp display."
+        },
+        {
+            "name": "Phone D",
+            "price": "$1099",
+            "url": "http://example.com/phone-d",
+            "description": "A flagship smartphone with an ultra-fast processor and pro-grade camera system."
+        },
+    ],
+    "tablet": [
+        {
+            "name": "Tablet A",
+            "price": "$599",
+            "url": "http://example.com/tablet-a",
+            "description": "A versatile tablet with a stunning display and powerful performance."
+        },
+        {
+            "name": "Tablet B",
+            "price": "$799",
+            "url": "http://example.com/tablet-b",
+            "description": "A high-end tablet with an M1 chip, perfect for creative professionals."
+        },
+    ],
+    "headphones": [
+        {
+            "name": "Headphones A",
+            "price": "$199",
+            "url": "http://example.com/headphones-a",
+            "description": "Noise-canceling headphones with crystal-clear sound quality."
+        },
+        {
+            "name": "Headphones B",
+            "price": "$299",
+            "url": "http://example.com/headphones-b",
+            "description": "Premium wireless headphones with high-fidelity audio and deep bass."
+        },
+    ],
+    "smartwatch": [
+        {
+            "name": "Smartwatch A",
+            "price": "$249",
+            "url": "http://example.com/smartwatch-a",
+            "description": "A sleek smartwatch with fitness tracking and heart rate monitoring."
+        },
+        {
+            "name": "Smartwatch B",
+            "price": "$349",
+            "url": "http://example.com/smartwatch-b",
+            "description": "A premium smartwatch with advanced health sensors and always-on display."
         },
     ],
 }
@@ -136,9 +202,17 @@ tools = [show_all_products, search_product, add_to_cart, see_cart, remove_from_c
 
 
 tools_by_name = {tool.name: tool for tool in tools}
-sys_msg = """You are a shopping agent which help users do shopping.Introduce your self as shopping assistant and ask them what help they require. Users can search for products,
- add them to cart, remove things from cart , see the cart, and can also checkout. You will show them the products and then ask them if they want it to cart. When they add it to cart,
- ask them if they continue shopping or checkout."""
+sys_msg = """You are a friendly and helpful shopping assistant, here to make the shopping experience smooth and enjoyable. Start by introducing yourself and asking how you can assist the user.  
+
+You can help with the following:  
+- Searching for products  
+- Adding items to the cart  
+- Removing items from the cart  
+- Viewing the cart  
+- Proceeding to checkout  
+
+When a user searches for products, display relevant options and ask if they’d like to add any to their cart. After adding an item, check if they want to continue shopping or proceed to checkout. Guide them step by step and ensure they have a seamless experience."""
+
 
 @task
 def call_model(messages):
